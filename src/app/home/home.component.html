@@ -1,0 +1,48 @@
+<div>
+    <div class="box">
+        <div class="whoami px-1 py-1">
+            <h1 class="text-white pacifico mat-display-3 mb-5">
+                Wesley Young<span class="accent-color">.</span>
+            </h1>
+            <h4 class="text-white mat-display-1 mb-2">
+                Full stack developer and DevOps Master
+            </h4>
+            <p class="text-white">
+                I'm Wesley Young, a full stack web developer with a passion for design and creativity based in Saint
+                George,
+                Utah.
+            </p>
+            <div>
+                <button class="mr-2 mt-1 cta" mat-raised-button color="accent">Build my dream website</button>
+                <button class="cta mt-1" mat-raised-button color="primary">I'm looking to hire</button>
+            </div>
+        </div>
+    </div>
+    <div class="dark-bg content-holder">
+        <div class="container py-4">
+            <div class="w-100 py-4">
+                <app-skill *ngFor="let skill of skills; let i = index" [skill]="skill" [i]="i"></app-skill>
+            </div>
+        </div>
+    </div>
+    <div class="white-bg">
+        <div class="container py-4">
+            <div class="w-100 py-4">
+                <div class="about-me">
+                    <h2 class="base-color mat-display-2 mb-2 ">
+                        About me
+                    </h2>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's
+                        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                        scrambled it to
+                        make a type specimen book. It has survived not only five centuries, but also the leap into
+                        electronic
+                        typesetting, remaining essentially unchanged.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+.box {
+    //background-color: #f2f2f2;
+    height: 100vh;
+    background-color: #a7908690;
+    z-index: 10;
+
+    .whoami {
+        max-width: 100vw;
+
+        h1, h4 {
+            max-width: 100vw;
+        }
+
+        position: absolute;
+        z-index: 10;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        p {
+            width: 400px;
+
+            max-width: 100vw;
+        }
+    }
+}
+
+.about-me {
+    p {
+        max-width: 420px;
+    }
+}
+
+.tile {
+    div {
+        position: absolute;
+        top: 0;
+    }
+}
+
+.cta {
+    height: 48px;
+    font-size: 18px;
+}
+
+.content-holder {
+}

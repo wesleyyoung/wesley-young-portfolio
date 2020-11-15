@@ -1,0 +1,32 @@
+<mat-grid-list class="list" [cols]="cols" [rowHeight]="rowHeight + 'px'" gutterSize="25px" #brandBoxContainer>
+    <mat-grid-tile class="nav-grid-tile"
+                   colspan="1" rowspan="1"
+                   *ngIf="!isMobile && isEven(i)"
+                   [ngSwitch]="skill.name">
+        <app-terminal class="w-100" *ngSwitchCase="'DevOps'"></app-terminal>
+        <app-ide class="w-100" *ngSwitchCase="'Backend'"></app-ide>
+        <app-page-design class="w-100" *ngSwitchCase="'Web Design'"></app-page-design>
+    </mat-grid-tile>
+    <mat-grid-tile class="nav-grid-tile" colspan="1" rowspan="1"
+                   [@flyIn]="isInViewport ? 'on-page' : isEven(i) ? 'rest-right' : 'rest-left'">
+        <mat-card class="skill-card" #card>
+            <mat-card-header>
+                <mat-card-title class="primary-color ">
+                    <h2 class="mat-display-2 mb-2">{{skill.name}}</h2>
+                </mat-card-title>
+                <mat-card-subtitle class="text-white">
+                    {{skill.text}}
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile class="nav-grid-tile"
+                   colspan="1"
+                   rowspan="1"
+                   *ngIf="!isMobile && !isEven(i)"
+                   [ngSwitch]="skill.name">
+        <app-terminal class="w-100" *ngSwitchCase="'DevOps'"></app-terminal>
+        <app-ide class="w-100" *ngSwitchCase="'Backend'"></app-ide>
+        <app-page-design class="w-100" *ngSwitchCase="'Web Design'"></app-page-design>
+    </mat-grid-tile>
+</mat-grid-list>

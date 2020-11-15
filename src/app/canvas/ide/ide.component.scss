@@ -1,0 +1,32 @@
+.ide {
+    background-color: #121212;
+    width: 100%;
+    height: 250px;
+    max-width: 425px;
+
+    pre {
+        font-family: monospace;
+        background-color: #1f1b24;
+        width: 100%;
+        color: #f2f2f2;
+        height: 100%;
+        line-height: 0;
+        counter-reset: line;
+
+        span {
+            display: block;
+            line-height: 1.5rem;
+
+            &:before {
+                counter-increment: line;
+                content: counter(line);
+                display: inline-block;
+                border-right: 1px solid #ddd;
+                padding: 0 .5em;
+                margin-right: .5em;
+                color: #888
+            }
+        }
+    }
+}
+

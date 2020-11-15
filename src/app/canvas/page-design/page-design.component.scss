@@ -1,0 +1,48 @@
+$dark-theme-bg: #17223b;
+$dark-theme-primary: #263859;
+$dark-theme-accent: #6b778d;
+$dark-theme-warn: #ff6768;
+
+.pd-primary-bg {
+    background-color: $dark-theme-primary;
+}
+
+.pd-accent-bg {
+    background-color: $dark-theme-accent;
+}
+
+.pd-warn-bg {
+    background-color: $dark-theme-warn;
+}
+
+.page-design {
+    background-color: $dark-theme-bg;
+    width: 100%;
+    height: 250px;
+    max-width: 425px;
+    display: inline-flex;
+
+    .pd-sidebar {
+        background-color: $dark-theme-primary;
+        height: 100%;
+        width: 80px;
+    }
+
+    .pd-content {
+        width: 100%;
+        display: flex;
+        padding: 6px;
+        position: relative;
+
+        .pd-profile-img {
+            position: absolute;
+            top: 0;
+            left: 15px;
+            transform: translateY(50%);
+            border-radius: 4px;
+            width: 75px;
+            height: 75px;
+            z-index: 100;
+        }
+    }
+}
