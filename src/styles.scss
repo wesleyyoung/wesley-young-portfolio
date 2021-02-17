@@ -23,6 +23,8 @@ $nexus-secondary-dark-contrast: $nexus-white;
 $nexus-base: #1b1210;
 $nexus-base-contrast: $nexus-white;
 
+$nexus-base-opacity: #1b1210F2;
+
 $primary: (
   50 : $nexus-primary-light,
   100 : $nexus-primary-light,
@@ -157,6 +159,19 @@ body {
   overflow-x: hidden;
 }
 
+.accent-divider {
+    border: none;
+    border-top: solid 1px mat-color($client-accent) !important;
+}
+
+.canyon-overlay {
+    background-color: #a7908690 !important;
+}
+
+.dark-overlay {
+    background-color: $nexus-base-opacity !important;
+}
+
 .spacer {
   flex: 1 1 auto;
 }
@@ -165,8 +180,16 @@ body {
   background-color: $nexus-white;
 }
 
+.bright-white-bg {
+    background-color: #FFFFFF;
+}
+
 .dark-bg {
   background-color: $nexus-base;
+}
+
+.bg-primary {
+    background-color: mat-color($client-primary) !important;
 }
 
 .base-color {
@@ -191,7 +214,15 @@ a {
 }
 
 .text-white {
-  color: #f2f2f2;;
+  color: #f2f2f2 !important;
+}
+
+.bg-dark {
+    background-color: #020202 !important;
+}
+
+.text-dark {
+    color: #020202 !important;
 }
 
 .rounded {
@@ -206,12 +237,20 @@ a {
   display: inline-flex;
 }
 
+.d-inline-block {
+    display: inline-block;
+}
+
 .d-block {
   display: block;
 }
 
 .d-none {
   display: none;
+}
+
+.d-table-cell {
+    display: table-cell !important;
 }
 
 .oy-hidden {
@@ -260,6 +299,15 @@ a {
 
 .bottom-100 {
   bottom: 100%;
+}
+
+.w-200px {
+    width: 200px;
+}
+
+.mw-500px {
+    max-width: 500px;
+    width: 100%;
 }
 
 .h-100 {
@@ -448,6 +496,14 @@ a {
   padding-right: 12px;
 }
 
+.pt-2 {
+    padding-top: 12px;
+}
+
+.pb-2 {
+    padding-bottom: 12px;
+}
+
 .px-3 {
   padding-left: 18px;
   padding-right: 18px;
@@ -456,6 +512,22 @@ a {
 .py-3 {
   padding-top: 18px;
   padding-bottom: 18px;
+}
+
+.pt-3 {
+    padding-top: 18px;
+}
+
+.pb-3 {
+    padding-bottom: 18px;
+}
+
+.pr-3 {
+    padding-right: 18px;
+}
+
+.pl-3 {
+    padding-left: 18px;
 }
 
 .pl-4 {
@@ -482,4 +554,13 @@ a {
   padding-left: 24px;
   margin-right: auto;
   margin-left: auto;
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
 }

@@ -60,7 +60,6 @@ export class TerminalComponent implements OnInit, OnDestroy {
         };
 
         const removeLetters = () => {
-            console.log('removing');
             this.currentLineIndex++;
             if (this.currentLineIndex > this.lines.length - 1) {
                 this.currentLineIndex = 0;

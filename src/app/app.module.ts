@@ -14,6 +14,8 @@ import {MatCardModule} from '@angular/material/card';
 import {TerminalComponent} from './canvas/terminal/terminal.component';
 import {PageDesignComponent} from './canvas/page-design/page-design.component';
 import {IdeComponent} from './canvas/ide/ide.component';
+import {MatIconModule} from '@angular/material/icon';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -33,6 +35,8 @@ import {IdeComponent} from './canvas/ide/ide.component';
         MatGridListModule,
         LayoutModule,
         MatCardModule,
+        MatIconModule,
+        HttpClientModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
