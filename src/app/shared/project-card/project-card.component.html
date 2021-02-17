@@ -1,0 +1,40 @@
+<mat-card class="mw-500px text-left d-table-cell">
+    <mat-card-header>
+        <div mat-card-avatar [class]="project.avatarClass"></div>
+        <mat-card-title>{{project.title}}</mat-card-title>
+        <mat-card-subtitle>{{project.subtitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <img *ngIf="!isMobile"
+         mat-card-image
+         [src]="project.cardImage"
+         [alt]="project.cardImageAlt">
+    <mat-card-content>
+        <p>
+            {{project.description}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a
+            *ngFor="let link of project.links"
+            [ngClass]="{'text-white': true, 'bg-dark': link.color === 'google-play'}"
+            class="text-white"
+            [color]="link.color"
+            target="_blank"
+            mat-raised-button
+            [href]="link.linkTo">
+            <mat-icon
+                *ngIf="link.color === 'google-play'"
+                aria-hidden="false"
+                svgIcon="google_play"
+                [attr.aria-label]="link.ariaLabel">
+            </mat-icon>
+            <mat-icon
+                *ngIf="link.color !== 'google-play'"
+                aria-hidden="false"
+                [attr.aria-label]="link.ariaLabel">
+                {{link.icon}}
+            </mat-icon>
+            {{link.name}}
+        </a>
+    </mat-card-actions>
+</mat-card>

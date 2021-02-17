@@ -13,18 +13,18 @@
                 Utah.
             </p>
             <div>
-                <button class="mr-2 mt-1 cta" mat-raised-button color="accent">
+                <a class="mr-2 mt-1 cta" [href]="freelanceMailText" mat-raised-button color="accent">
                     <mat-icon aria-hidden="false" aria-label="Reach out to me to build you dream website">
                         filter_drama
                     </mat-icon>
                     Build my dream website
-                </button>
-                <button class="cta mt-1" mat-raised-button color="primary">
+                </a>
+                <a class="cta mt-1" [href]="lookingToHireMailText" mat-raised-button color="primary">
                     <mat-icon aria-hidden="false" aria-label="Reach out to hire me on your team">
                         person_add
                     </mat-icon>
                     I'm looking to hire
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -35,6 +35,9 @@
             </div>
         </div>
     </div>
+    <div class="black-bg">
+
+    </div>
     <div class="white-bg pt-2">
         <div class="container py-4 text-center">
             <div class="w-100 py-4">
@@ -43,140 +46,12 @@
                 </h2>
                 <hr class="mw-500px accent-divider">
             </div>
-            <div class="d-inline-block px-2 py-2">
-                <mat-card class="mw-500px text-left d-table-cell">
-                    <mat-card-header>
-                        <div mat-card-avatar class="e2c-icon"></div>
-                        <mat-card-title>Earth To Color</mat-card-title>
-                        <mat-card-subtitle>Android App</mat-card-subtitle>
-                    </mat-card-header>
-                    <img *ngIf="!isMobile" mat-card-image src="/assets/imgs/earth2color.png"
-                         alt="Photo of the Earth to Color in the app store">
-                    <mat-card-content>
-                        <p>
-                            Earth To Color is an Android application I wrote which
-                            allows users to get the hex code and estimated name of any color they point their phone at.
-                            It also calculates the complimentary, split complimentary, and triadic colors of the color
-                            that they capture.
-                        </p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <a class="bg-dark text-white"
-                           target="_blank"
-                           mat-raised-button
-                           href="https://play.google.com/store/apps/details?id=com.welsey.photopalette">
-                            <mat-icon aria-hidden="false" aria-label="Google Play" svgIcon="google_play"></mat-icon>
-                            Google Play Store
-                        </a>
-                    </mat-card-actions>
-                </mat-card>
-            </div>
-            <div class="d-inline-block px-2 py-2">
-                <mat-card class="mw-500px text-left d-table-cell">
-                    <mat-card-header>
-                        <div mat-card-avatar class="mambafi-icon"></div>
-                        <mat-card-title>MambaFi</mat-card-title>
-                        <mat-card-subtitle>Windows Application</mat-card-subtitle>
-                    </mat-card-header>
-                    <img *ngIf="!isMobile" mat-card-image src="/assets/imgs/mambafi-card.png"
-                         alt="Photo of the Mambafi Application">
-                    <mat-card-content>
-                        <p>
-                            MambaFi is an <a href="https://www.electronjs.org/">Electron</a> application I wrote which
-                            allows users to manage their wireless network profiles in Windows 10 without needing to open
-                            the command prompt. Its UI is written in Angular 8 using Angular Material.
-                        </p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <a class="text-white"
-                           target="_blank"
-                           color="accent"
-                           mat-raised-button
-                           href="https://mambafi.com/">
-                            <mat-icon aria-hidden="false" aria-label="Example home icon">language</mat-icon>
-                            Website
-                        </a>
-                        <a class="text-white"
-                           target="_blank"
-                           color="primary"
-                           mat-raised-button
-                           href="https://github.com/wesleyyoung/MambaFi">
-                            <mat-icon aria-hidden="false" aria-label="Example home icon">source</mat-icon>
-                            Source Code
-                        </a>
-                    </mat-card-actions>
-                </mat-card>
-            </div>
-            <div class="d-inline-block px-2 py-2">
-                <mat-card class="mw-500px text-left d-table-cell">
-                    <mat-card-header>
-                        <div mat-card-avatar class="perch-icon"></div>
-                        <mat-card-title>Perch Query Builder</mat-card-title>
-                        <mat-card-subtitle>NestJS-GraphQL Library</mat-card-subtitle>
-                    </mat-card-header>
-                    <img *ngIf="!isMobile" mat-card-image src="/assets/imgs/perch-card.png"
-                         alt="Photo of the Mambafi Application">
-                    <mat-card-content>
-                        <p>
-                            In order to harness the true potential of NestJS, GraphQL, and TypeORM: I wrote a library
-                            which can take an incoming GraphQL query and transform it into a TypeORM query, an addition
-                            to providing pagination and searching.
-                        </p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <a class="text-white"
-                           target="_blank"
-                           color="primary"
-                           mat-raised-button
-                           href="https://github.com/wesleyyoung/perch-query-builder">
-                            <mat-icon aria-hidden="false" aria-label="Example home icon">source</mat-icon>
-                            Source Code
-                        </a>
-                    </mat-card-actions>
-                </mat-card>
+            <div class="d-inline-block px-2 py-2"
+                 *ngFor="let project of projects">
+                <app-project-card
+                    [project]="project">
+                </app-project-card>
             </div>
         </div>
-    </div>
-    <div class="white-bg vh-200">
-        <mat-grid-list class="h-100" cols="8" rowHeight="10vh" gutterSize="3px">
-            <mat-grid-tile rowspan="10" colspan="1"></mat-grid-tile>
-            <mat-grid-tile rowspan="1" colspan="7"></mat-grid-tile>
-            <mat-grid-tile class="mat-elevation-z6 bright-white-bg" rowspan="9" colspan="7">
-                <div class="h-100 about-me">
-                    <div>
-                        <h2 class="base-color mat-display-2 mb-2">
-                            About me
-                        </h2>
-                        <hr class="accent-divider">
-                        <p>
-                            I am a full-stack developer that has
-                        </p>
-                    </div>
-                </div>
-            </mat-grid-tile>
-            <mat-grid-tile rowspan="1" colspan="7"></mat-grid-tile>
-            <mat-grid-tile rowspan="10" colspan="1"></mat-grid-tile>
-            <mat-grid-tile class="mat-elevation-z6 bright-white-bg" rowspan="10" colspan="7">
-                <div class="h-100 about-me">
-                    <div>
-                        <h2 class="base-color mat-display-2 mb-2">
-                            About me
-                        </h2>
-                        <hr class="accent-divider">
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been
-                            the industry's
-                            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                            scrambled it to
-                            make a type specimen book. It has survived not only five centuries, but also the leap into
-                            electronic
-                            typesetting, remaining essentially unchanged.
-                        </p>
-                    </div>
-                </div>
-            </mat-grid-tile>
-            <mat-grid-tile rowspan="1" colspan="8"></mat-grid-tile>
-        </mat-grid-list>
     </div>
 </div>

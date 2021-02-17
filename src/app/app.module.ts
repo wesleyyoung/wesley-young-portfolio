@@ -16,6 +16,7 @@ import {PageDesignComponent} from './canvas/page-design/page-design.component';
 import {IdeComponent} from './canvas/ide/ide.component';
 import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from '@angular/common/http';
+import { ProjectCardComponent } from './shared/project-card/project-card.component';
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import {HttpClientModule} from '@angular/common/http';
         TerminalComponent,
         PageDesignComponent,
         IdeComponent,
+        ProjectCardComponent,
     ],
     imports: [
         BrowserModule,

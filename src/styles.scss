@@ -176,6 +176,10 @@ body {
   flex: 1 1 auto;
 }
 
+.black-bg {
+    background-color: #121212;
+}
+
 .white-bg {
   background-color: $nexus-white;
 }
@@ -563,4 +567,19 @@ a {
         margin-right: 0 !important;
         margin-left: 0 !important;
     }
+}
+
+.mambafi-icon {
+    background-image: url('/assets/imgs/mambafi_180x180.png');
+    background-size: cover;
+}
+
+.perch-icon {
+    background-image: url('/assets/imgs/perch.png');
+    background-size: cover;
+}
+
+.e2c-icon {
+    background-image: url('/assets/imgs/e2c.png');
+    background-size: cover;
 }

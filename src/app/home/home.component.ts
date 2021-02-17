@@ -1,10 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
-import {Observable, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
 import {ISkill} from '../interface/skill';
 import {SKILLS} from '../static/skills';
-import {MatIconRegistry} from '@angular/material/icon';
-import {DomSanitizer} from '@angular/platform-browser';
+import {BuildMyDreamWebsite, LookingToHireSubject, MyEmail} from '../constants';
+import {earthToColorProject, mambafiProject, perchQbProject} from '../static';
+import {Project} from '../interface';
 
 @Component({
     selector: 'app-home',
@@ -20,6 +21,15 @@ export class HomeComponent implements OnInit, OnDestroy {
     public skills: ISkill[] = SKILLS;
 
     public isMobile = false;
+
+    public projects = [
+        earthToColorProject,
+        mambafiProject,
+        perchQbProject,
+    ];
+
+    public lookingToHireMailText = '';
+    public freelanceMailText = '';
 
     constructor(
         private bp: BreakpointObserver,
@@ -42,5 +52,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
+        this.lookingToHireMailText = `mailto:${MyEmail}?subject=${LookingToHireSubject}`;
+        this.freelanceMailText = `mailto:${MyEmail}?subject=${BuildMyDreamWebsite}`;
     }
 }

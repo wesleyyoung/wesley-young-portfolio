@@ -25,29 +25,10 @@
     }
 }
 
-.mambafi-icon {
-    background-image: url('/assets/imgs/mambafi_180x180.png');
-    background-size: cover;
-}
-
-.perch-icon {
-    background-image: url('/assets/imgs/perch.png');
-    background-size: cover;
-}
-
-.e2c-icon {
-    background-image: url('/assets/imgs/e2c.png');
-    background-size: cover;
-}
-
 .about-me {
-    position: absolute;
     height: fit-content;
     width: 90%;
     max-width: 475px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     p {
         text-align: left;
     }
@@ -63,6 +44,8 @@
 .cta {
     height: 48px;
     font-size: 18px;
+    color: #f2f2f2 !important;
+    padding-top: 5px;
 }
 
 .content-holder {
